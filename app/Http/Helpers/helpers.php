@@ -21,20 +21,6 @@ function getEventsArray () {
   
   // Put the data into JSON format.
   $events = json_decode( $event_data , true );
-  date_default_timezone_set('America/New_York');
-  return $events;
-}
-
-/**
- * Retrieve event information from API in array format
- */
-function getEventsArray () {
-  $event_url = 'https://nunes.online/api/gtc';
-  $event_data = file_get_contents( $event_url );
-  
-  // Put the data into JSON format.
-  $events = json_decode( $event_data , true );
-  
   return $events;
 }
 
@@ -50,7 +36,6 @@ function getOrgs () {
 	
 	// Match event hosts with known orgs.
 	$orgs = convertOrgNames( $orgs );
-	 date_default_timezone_set('America/New_York');
 
 	return $orgs;
 }
