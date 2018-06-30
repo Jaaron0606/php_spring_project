@@ -18,7 +18,6 @@
 Route::get('/', 'apiController@debug');
 Route::get('/orgs', 'apiController@showOrgs');
 Route::get('/events', 'apiController@showEvents');
-
 /**
  * Example routes for Now UI Kit pages.
  */
@@ -49,4 +48,8 @@ Route::get('/template', function () {
 
 Route::get('/tutorial', function () {
   return view('tutorial-components');
+});
+
+Route::get('/calendar', function () {
+  return view('calendar');
 });

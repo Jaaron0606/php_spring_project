@@ -72,6 +72,7 @@ class apiController extends Controller
 		return view( 'orgs' , [ 'orgs' => $orgs ]);
 	}
 	
+	
 	/**
 	 * Display a list of events.
 	 */
