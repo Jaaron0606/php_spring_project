@@ -12,15 +12,22 @@ function getEvents () {
   return $events;
 }
 
+<<<<<<< HEAD
 /**
  * Retrieve event information from API as an array.
  */
+=======
+>>>>>>> 227c316f5da35cdbe911b10b659f4220837a573b
 function getEventsArray () {
   $event_url = 'https://nunes.online/api/gtc';
   $event_data = file_get_contents( $event_url );
   
   // Put the data into JSON format.
+<<<<<<< HEAD
   $events = json_decode( $event_data , true );
+=======
+  $events = json_decode( $event_data, true );
+>>>>>>> 227c316f5da35cdbe911b10b659f4220837a573b
   return $events;
 }
 

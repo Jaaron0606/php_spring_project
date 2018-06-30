@@ -35,7 +35,13 @@ Route::get('/calendar', function () {
 //   return view('welcome');
 // });
 
+<<<<<<< HEAD
 
+=======
+Route::get('/', 'apiController@debug');
+Route::get('/orgs', 'apiController@showOrgs');
+Route::get('/events', 'apiController@showEvents');
+>>>>>>> 227c316f5da35cdbe911b10b659f4220837a573b
 /**
  * Example routes for Now UI Kit pages.
  */
@@ -64,6 +70,16 @@ Route::get('/calendar', function () {
 //   return view('template');
 // });
 
+<<<<<<< HEAD
 // Route::get('/tutorial', function () {
 //   return view('tutorial-components');
 // });
+=======
+Route::get('/tutorial', function () {
+  return view('tutorial-components');
+});
+
+Route::get('/calendar', function () {
+  return view('calendar');
+});
+>>>>>>> 227c316f5da35cdbe911b10b659f4220837a573b
