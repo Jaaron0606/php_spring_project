@@ -1,5 +1,5 @@
 <?php
-date_default_timezone_set('America/New_York');
+
 /**
  * Retrieve event information from API
  */
@@ -26,6 +26,19 @@ function getEventsArray () {
 }
 
 /**
+ * Retrieve event information from API in array format
+ */
+function getEventsArray () {
+  $event_url = 'https://nunes.online/api/gtc';
+  $event_data = file_get_contents( $event_url );
+  
+  // Put the data into JSON format.
+  $events = json_decode( $event_data , true );
+  
+  return $events;
+}
+
+/**
  * Retrieve organization information from API
  */
 function getOrgs () {
@@ -41,6 +54,20 @@ function getOrgs () {
 
 	return $orgs;
 }
+
+/**
+ * Convert event timestamp into readable format for display
+ * Use Carbon package for less DateTime headaches...
+ */
+use Carbon\Carbon;
+function printTime ($date) {
+  $displayTime = Carbon::createFromFormat('Y-m-d\TH:i:s\Z', 
+                                            $date, 
+                                            'UTC');
+                                            
+  return $displayTime->tz(config('app.timezone'))->format('g:i A, D j M y');
+}
+
 
 /**
  * Add general org info for Greenville SC Makers @ Synergy Mill 

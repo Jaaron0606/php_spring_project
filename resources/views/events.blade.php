@@ -6,16 +6,22 @@
 	<h1>Events</h1>
 	<h3>Choose a month to filter</h3>
 	
-	<a href="<?= explode("?", $_SERVER['REQUEST_URI'])[0] ?>">
-	  Clear filter
-	</a>
-	<br />
-	@foreach( $months as $month )
-	  <a href=<?= '?month=' . rawurlencode($month) ?>>
-	    <?= $month ?>
+	<form>
+    <select class="form-control" name="month">
+	    @foreach( $months as $month )
+	      <option value="<?= $month ?>">
+	      	<?= $month ?>
+	      </option>
+	    @endforeach
+    </select>
+    
+    <button class="btn btn-primary btn-round" type="submit">Submit</button>
+  	<a href="<?= explode('?', $_SERVER['REQUEST_URI'])[0] ?>" class="btn btn-primary btn-round btn-simple" role="button">
+    		Clear filter
     </a>
-    <br />
-	@endforeach
+  </form>
+	
+	<br>
 	
 	<ul>
 		@foreach( $events as $event )
@@ -24,14 +30,13 @@
 			    {{ $event->event_name }} hosted by {{ $event->group_name }}
 		    </strong>
 		    
-		    <a href=<?= build_cal_url( $event ); ?> target="_blank">
+		    <a href="{{ build_cal_url( $event ) }}" target="_blank">
   				<ul>
-  					<li><strong>Time:</strong> <?= DateTime::
-  					  createFromFormat('Y-m-d\TH:i:s\Z', $event->time)
-  					  ->format('g:i A, D j M y') ?></li>
+  					<li><strong>Time: </strong>{{ printTime( $event->time ) }}</li>
   				</ul>
 				</a>
 			</li>
 		@endforeach
 	</ul>
 @endsection
+
