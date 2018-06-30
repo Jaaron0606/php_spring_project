@@ -10,7 +10,6 @@
 	  Clear filter
 	</a>
 	<br />
-	
 	@foreach( $months as $month )
 	  <a href=<?= '?month=' . rawurlencode($month) ?>>
 	    <?= $month ?>

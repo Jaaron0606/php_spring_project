@@ -1,5 +1,5 @@
 <?php
-
+date_default_timezone_set('America/New_York');
 /**
  * Retrieve event information from API
  */
@@ -9,7 +9,6 @@ function getEvents () {
   
   // Put the data into JSON format.
   $events = json_decode( $event_data );
-  
   return $events;
 }
 
@@ -22,7 +21,7 @@ function getEventsArray () {
   
   // Put the data into JSON format.
   $events = json_decode( $event_data , true );
-  
+  date_default_timezone_set('America/New_York');
   return $events;
 }
 
@@ -38,7 +37,8 @@ function getOrgs () {
 	
 	// Match event hosts with known orgs.
 	$orgs = convertOrgNames( $orgs );
-	
+	 date_default_timezone_set('America/New_York');
+
 	return $orgs;
 }
 
@@ -100,7 +100,7 @@ function convertOrgNames ($orgs) {
  * Build a Google calendar url from an event object.
  */
 function build_cal_url( $event )
-{
+{ 
   $event_time = DateTime::createFromFormat('Y-m-d\TH:i:s\Z', 
   $event->time);
   $start_time = $event_time->format('Ymd\THis\Z');

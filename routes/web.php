@@ -50,3 +50,7 @@ Route::get('/template', function () {
 Route::get('/tutorial', function () {
   return view('tutorial-components');
 });
+
+Route::get('/calender', function () {
+  return view('calender');
+});
