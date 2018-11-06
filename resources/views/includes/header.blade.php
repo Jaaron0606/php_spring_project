@@ -18,15 +18,7 @@
         <div class="collapse navbar-collapse justify-content-end" data-nav-image="/img/blurred-image-1.jpg">
             <ul class="navbar-nav">
                 <li class="nav-item">
-<<<<<<< HEAD
-                    <a class="nav-link" href="/calendar">
-                        <i class="fa fa-calendar"></i>
-                        <p>Calendar</p>
-                    </a>
-                </li>
-                <li class="nav-item">
-=======
->>>>>>> 227c316f5da35cdbe911b10b659f4220837a573b
+
                     <a class="nav-link" href="/events">
                         <i class="fa fa-calendar-check-o"></i>
                         <p>Events</p>
